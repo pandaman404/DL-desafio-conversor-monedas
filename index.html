@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafío conversor de monedas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-black min-h-[120vh]">
+    <main class="w-full max-w-[1000px] my-20 mx-auto">
+      <h1 class="text-white uppercase text-center mb-10 text-2xl tracking-wide py-2 border-t border-b border-cyan-500">
+        Conversor de monedas Nacional
+      </h1>
+      <form id="currencyConverterForm" class="bg-stone-200 rounded max-w-[300px] mx-auto p-5 flex flex-col gap-5 mb-16">
+        <div class="flex flex-col gap-1">
+          <label for="pesos" class="font-bold">Pesos CLP:</label>
+          <input type="number" name="pesos" class="border border-gray-300 h-8 outline-none px-3" />
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="currency" class="font-bold">Moneda a convertir:</label>
+          <select name="currency" class="h-8 px-1">
+            <option value="" selected disabled>Seleccione una moneda</option>
+            <option value="dolar">Dolar</option>
+            <option value="euro">Euro</option>
+            <option value="bitcoin">Bitcoin</option>
+          </select>
+        </div>
+        <button type="submit" class="bg-cyan-400 text-white font-bold py-2">Buscar</button>
+        <div class="block mt-1 text-center">
+          <span id="result" class="font-bold">...</span>
+        </div>
+      </form>
+      <div class="bg-black w-full">
+        <canvas id="currencyChart"></canvas>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
